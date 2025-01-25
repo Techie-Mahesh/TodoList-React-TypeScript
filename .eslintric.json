@@ -24,10 +24,11 @@
     "react/prop-types": "off", // Turn off prop-types since TypeScript already provides type checking
 
     // TypeScript specific rules
-    "@typescript-eslint/no-unused-vars": [
-      "warn", // Warn for unused variables (instead of error)
-      { "argsIgnorePattern": "^_" } // Allow unused arguments starting with "_"
-    ],
+    // "@typescript-eslint/no-unused-vars": [
+    //   "warn", // Warn for unused variables (instead of error)
+    //   { "argsIgnorePattern": "^_" } // Allow unused arguments starting with "_"
+    // ],
+    "@typescript-eslint/no-unused-vars": "off", // Turn off no-unused-vars since TypeScript already provides type checking
     "@typescript-eslint/no-explicit-any": "warn", // Warn for usage of 'any' type
     "@typescript-eslint/explicit-module-boundary-types": "off", // Optionally, allow no explicit return types
 

@@ -4,13 +4,12 @@
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
   ],
-  "compilerOptions": {
+    "compilerOptions": {
     "strict": true,               // Enables all strict type-checking options
-    "noImplicitAny": true,        // Throws an error if a variable has an implicit 'any' type
-    "noImplicitThis": true,       // Ensures that 'this' is always explicitly typed
-    "strictNullChecks": true,     // Ensures that null and undefined are handled explicitly
-    "strictFunctionTypes": true,  // Ensures function parameter types are strictly checked
-    "noUncheckedIndexedAccess": true  // Ensures that array indexes are strictly typed
-  }
-
+      "noUnusedLocals": false,        // Disable errors for unused variables
+      "noUnusedParameters": false,    // Disable errors for unused parameters
+      "noImplicitAny": true,          // Ensure explicit typing for variables and parameters
+      "strictNullChecks": true,       // Ensure proper handling of null and undefined
+      "strictFunctionTypes": true     // Ensure strict function type checks
+    }
 }

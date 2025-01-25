@@ -1,0 +1,54 @@
+{
+  "parser": "@typescript-eslint/parser", // Use the TypeScript parser
+  "parserOptions": {
+    "ecmaVersion": 2020, // Enable modern JavaScript syntax
+    "sourceType": "module", // Enable ES Modules
+    "project": "./tsconfig.json" // Path to your TypeScript config (to understand type information)
+  },
+  "extends": [
+    "eslint:recommended", // Use ESLint's recommended rules
+    "plugin:@typescript-eslint/recommended", // TypeScript recommended rules
+    "plugin:react/recommended", // React recommended rules
+    "plugin:react-hooks/recommended", // React Hooks best practices
+    "plugin:prettier/recommended" // Enable Prettier rules (if using Prettier)
+  ],
+  "plugins": [
+    "react", // Enable React linting rules
+    "@typescript-eslint", // Enable TypeScript linting rules
+    "react-hooks", // Enable React Hooks linting rules
+    "prettier" // Enable Prettier linting rules
+  ],
+  "rules": {
+    // React specific rules
+    "react/react-in-jsx-scope": "off", // React 17+ doesn't require React in scope for JSX
+    "react/prop-types": "off", // Turn off prop-types since TypeScript already provides type checking
+
+    // TypeScript specific rules
+    "@typescript-eslint/no-unused-vars": [
+      "warn", // Warn for unused variables (instead of error)
+      { "argsIgnorePattern": "^_" } // Allow unused arguments starting with "_"
+    ],
+    "@typescript-eslint/no-explicit-any": "warn", // Warn for usage of 'any' type
+    "@typescript-eslint/explicit-module-boundary-types": "off", // Optionally, allow no explicit return types
+
+    // React Hooks specific rules
+    "react-hooks/rules-of-hooks": "error", // Ensure hooks are called correctly
+    "react-hooks/exhaustive-deps": "warn", // Warn about missing dependencies in hooks
+
+    // Prettier integration (if you're using Prettier)
+    "prettier/prettier": [
+      "warn",
+      {
+        // Warn for Prettier formatting issues
+        "singleQuote": true, // Use single quotes
+        "trailingComma": "es5", // Trailing commas where valid in ES5
+        "arrowParens": "always" // Always use parentheses around arrow function arguments
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect" // Automatically detect the React version
+    }
+  }
+}
